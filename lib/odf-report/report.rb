@@ -13,6 +13,7 @@ class Report
     @images = {}
     @image_names_replacements = {}
     @sections = []
+    @xml_blocks = []
 
     yield(self)
 
@@ -46,6 +47,12 @@ class Report
     yield(sec)
   end
 
+  def add_xml_block(xml_block_tag, xml_string='')
+    opts = {:name => xml_block_tag, :value => xml_string}
+    xml_block = XMLBlock.new(opts)
+    @xml_blocks << xml_block
+  end
+
   def add_image(name, path)
     @images[name] = path
   end
@@ -58,11 +65,13 @@ class Report
 
         parse_document(txt) do |doc|
 
-          @sections.each { |s| s.replace!(doc) }
-          @tables.each   { |t| t.replace!(doc) }
+          @sections.each   { |s| s.replace!(doc) }
+          @tables.each     { |t| t.replace!(doc) }
 
-          @texts.each    { |t| t.replace!(doc) }
-          @fields.each   { |f| f.replace!(doc) }
+          @texts.each      { |t| t.replace!(doc) }
+          @fields.each     { |f| f.replace!(doc) }
+
+          @xml_blocks.each { |b| b.replace!(doc) }
 
           find_image_name_matches(doc)
           avoid_duplicate_image_names(doc)
