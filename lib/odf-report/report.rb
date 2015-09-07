@@ -47,8 +47,8 @@ class Report
     yield(sec)
   end
 
-  def add_xml_block(xml_block_tag, xml_string='')
-    opts = {:name => xml_block_tag, :value => xml_string}
+  def add_xml_block(xml_block_tag, value='')
+    opts = {:name => xml_block_tag, :value => value}
     xml_block = XMLBlock.new(opts)
     @xml_blocks << xml_block
   end
