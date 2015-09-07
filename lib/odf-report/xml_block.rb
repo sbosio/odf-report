@@ -8,7 +8,14 @@ module ODFReport
 
       val = get_value(data_item)
 
-      txt.gsub!(to_placeholder, val)
+      if val.is_a?(String)
+        txt.gsub!(to_placeholder, val)
+      elsif val.is_a?(Array)
+        self.replace!(content, val.shift + to_placeholder)
+        self.replace!(content, val)
+      elsif val.nil?
+        txt.gsub!(to_placeholder, "")
+      end
 
       content.inner_html = txt
 
