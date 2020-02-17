@@ -1,0 +1,218 @@
+
+spec/spec_helper.rb,486
+class ItemItem6,0
+  attr_accessor :id, :name, :subsid7,0
+  attr_accessor :id, :name, :subsid=7,0
+  attr_accessor :id, :name, :subsname7,0
+  attr_accessor :id, :name, :subsname=7,0
+  attr_accessor :id, :name, :subssubs7,0
+  attr_accessor :id, :name, :subssubs=7,0
+  def initialize(_id, _name, _subs=[])initialize8,0
+  def self.get_list(quant = 3)get_list14,0
+class InspectorInspector24,0
+  def initialize(file)initialize26,0
+  def xmlxml33,0
+  def texttext37,0
+
+lib/odf-report/version.rb,106
+module ODFReportODFReport1,0
+  VERSION = "0.7.0"VERSION2,0
+  VERSION = "0.7.0"ODFReport::VERSION2,0
+
+lib/odf-report/xml_block.rb,174
+module ODFReportODFReport1,0
+  class XMLBlock < FieldXMLBlock3,0
+  class XMLBlock < FieldODFReport::XMLBlock3,0
+    def replace!(content, data_item = nil)replace!5,0
+
+lib/odf-report/nestable.rb,662
+module ODFReportODFReport1,0
+  class NestableNestable2,0
+  class NestableODFReport::Nestable2,0
+    def initialize(opts)initialize4,0
+    def set_source(data_item)set_source17,0
+    def add_field(name, data_field=nil, &block)add_field22,0
+    alias_method :add_column, :add_fieldadd_column26,0
+    def add_text(name, data_field=nil, &block)add_text28,0
+    def add_image(name, data_field=nil, &block)add_image33,0
+    def add_table(table_name, collection_field, opts={})add_table38,0
+    def add_section(section_name, collection_field, opts={})add_section46,0
+    def all_imagesall_images54,0
+    def wrap_with_ns(node)wrap_with_ns58,0
+
+lib/odf-report/field.rb,725
+module ODFReportODFReport1,0
+  class FieldField2,0
+  class FieldODFReport::Field2,0
+    DELIMITERS = %w([ ])DELIMITERS4,0
+    DELIMITERS = %w([ ])ODFReport::Field::DELIMITERS4,0
+    def initialize(opts, &block)initialize6,0
+    def set_source(record)set_source11,0
+    def replace!(content, data_item = nil)replace!16,0
+    def to_placeholderto_placeholder28,0
+    def sanitize(txt)sanitize36,0
+    HTML_ESCAPE = { '&' => '&amp;',  '>' => '&gt;',   '<' => '&lt;', '"' => '&quot;' }HTML_ESCAPE42,0
+    HTML_ESCAPE = { '&' => '&amp;',  '>' => '&gt;',   '<' => '&lt;', '"' => '&quot;' }ODFReport::Field::HTML_ESCAPE42,0
+    def html_escape(s)html_escape44,0
+    def odf_linebreak(s)odf_linebreak49,0
+
+lib/odf-report/image.rb,523
+module ODFReportODFReport1,0
+  class Image < FieldImage2,0
+  class Image < FieldODFReport::Image2,0
+    IMAGE_DIR_NAME = "Pictures"IMAGE_DIR_NAME4,0
+    IMAGE_DIR_NAME = "Pictures"ODFReport::Image::IMAGE_DIR_NAME4,0
+    attr_reader :filesfiles6,0
+    def initialize(opts, &block)initialize8,0
+    def replace!(doc, data_item = nil)replace!13,0
+    def self.include_image_file(zip_file, image_file)include_image_file28,0
+    def self.include_manifest_entry(content, image_file)include_manifest_entry36,0
+
+lib/odf-report/report.rb,584
+module ODFReportODFReport1,0
+class ReportReport3,0
+class ReportODFReport::Report3,0
+  def initialize(template_name = nil, io: nil)initialize5,0
+  def add_field(field_tag, value='')add_field19,0
+  def add_text(field_tag, value='')add_text25,0
+  def add_table(table_name, collection, opts={})add_table31,0
+  def add_section(section_name, collection, opts={})add_section39,0
+  def add_xml_block(xml_block_tag, xml_string='')add_xml_block47,0
+  def add_image(image_name, value='')add_image53,0
+  def generate(dest = nil)generate59,0
+  def all_imagesall_images87,0
+
+lib/odf-report/nested.rb,611
+module ODFReportODFReport1,0
+  module NestedNested3,0
+  module NestedODFReport::Nested3,0
+    def add_field(name, data_field=nil, &block)add_field5,0
+    alias_method :add_column, :add_fieldadd_column10,0
+    def add_text(name, data_field=nil, &block)add_text12,0
+    def add_image(name, data_field=nil, &block)add_image17,0
+    def add_table(table_name, collection_field, opts={})add_table22,0
+    def add_section(section_name, collection_field, opts={})add_section30,0
+    def all_imagesall_images38,0
+    def get_collection_from_item(item, collection_field)get_collection_from_item42,0
+
+lib/odf-report/section.rb,250
+module ODFReportODFReport1,0
+  class Section < NestableSection2,0
+  class Section < NestableODFReport::Section2,0
+    def replace!(doc)replace!4,0
+    def find_section_node(doc)find_section_node28,0
+    def deep_clone(node)deep_clone32,0
+
+lib/odf-report/parser/default.rb,493
+module ODFReportODFReport1,0
+module ParserParser3,0
+module ParserODFReport::Parser3,0
+  class DefaultDefault24,0
+  class DefaultODFReport::Parser::Default24,0
+    attr_accessor :paragraphsparagraphs26,0
+    attr_accessor :paragraphsparagraphs=26,0
+    def initialize(text, template_node)initialize28,0
+    def parseparse36,0
+    def add_paragraph(text, style)add_paragraph49,0
+    def parse_formatting(text)parse_formatting61,0
+    def check_style(node)check_style70,0
+
+lib/odf-report/template.rb,884
+module ODFReportODFReport1,0
+  class TemplateTemplate2,0
+  class TemplateODFReport::Template2,0
+    CONTENT_FILES = ['content.xml', 'styles.xml']CONTENT_FILES4,0
+    CONTENT_FILES = ['content.xml', 'styles.xml']ODFReport::Template::CONTENT_FILES4,0
+    MANIFEST_FILE = "META-INF/manifest.xml"MANIFEST_FILE5,0
+    MANIFEST_FILE = "META-INF/manifest.xml"ODFReport::Template::MANIFEST_FILE5,0
+    attr_accessor :output_streamoutput_stream7,0
+    attr_accessor :output_streamoutput_stream=7,0
+    def initialize(template = nil, io: nil)initialize9,0
+    def update_contentupdate_content17,0
+    def update_files(&block)update_files24,0
+    def update_manifest(&block)update_manifest45,0
+    def datadata60,0
+    def update_file(name, data)update_file64,0
+    def get_template_entriesget_template_entries71,0
+    def process_entry(entry)process_entry81,0
+
+lib/odf-report/data_source.rb,430
+module ODFReportODFReport1,0
+  class DataSourceDataSource2,0
+  class DataSourceODFReport::DataSource2,0
+    attr_reader :valuevalue4,0
+    def initialize(opts, &block)initialize6,0
+    def set_source(record)set_source12,0
+    def each(&block)each16,0
+    def empty?empty?20,0
+    def extract_value_from_item(record)extract_value_from_item26,0
+    def execute_methods_on_item(record)execute_methods_on_item51,0
+
+lib/odf-report/text.rb,277
+module ODFReportODFReport1,0
+  class Text < FieldText3,0
+  class Text < FieldODFReport::Text3,0
+    attr_accessor :parserparser5,0
+    attr_accessor :parserparser=5,0
+    def replace!(doc, data_item = nil)replace!7,0
+    def find_text_node(doc)find_text_node23,0
+
+lib/odf-report/table.rb,406
+module ODFReportODFReport1,0
+  class Table < NestableTable2,0
+  class Table < NestableODFReport::Table2,0
+    def initialize(opts)initialize4,0
+    def replace!(doc)replace!12,0
+    def get_next_rowget_next_row46,0
+    def get_start_nodeget_start_node66,0
+    def template_lengthtemplate_length70,0
+    def find_table_node(doc)find_table_node74,0
+    def deep_clone(node)deep_clone78,0
+
+test/sections_test.rb,392
+  class ItemItem7,0
+    attr_accessor :name, :sid, :childrenname8,0
+    attr_accessor :name, :sid, :childrenname=8,0
+    attr_accessor :name, :sid, :childrensid8,0
+    attr_accessor :name, :sid, :childrensid=8,0
+    attr_accessor :name, :sid, :childrenchildren8,0
+    attr_accessor :name, :sid, :childrenchildren=8,0
+    def initialize(_name, _sid, _children=[])initialize9,0
+
+test/nested_tables_test.rb,392
+  class ItemItem7,0
+    attr_accessor :name, :sid, :childrenname8,0
+    attr_accessor :name, :sid, :childrenname=8,0
+    attr_accessor :name, :sid, :childrensid8,0
+    attr_accessor :name, :sid, :childrensid=8,0
+    attr_accessor :name, :sid, :childrenchildren8,0
+    attr_accessor :name, :sid, :childrenchildren=8,0
+    def initialize(_name, _sid, _children=[])initialize9,0
+
+test/sub_sections_test.rb,559
+  class ItemItem7,0
+    attr_accessor :name, :sid, :children, :subsname8,0
+    attr_accessor :name, :sid, :children, :subsname=8,0
+    attr_accessor :name, :sid, :children, :subssid8,0
+    attr_accessor :name, :sid, :children, :subssid=8,0
+    attr_accessor :name, :sid, :children, :subschildren8,0
+    attr_accessor :name, :sid, :children, :subschildren=8,0
+    attr_accessor :name, :sid, :children, :subssubs8,0
+    attr_accessor :name, :sid, :children, :subssubs=8,0
+    def initialize(_name, _sid, _children=[], _subs=[])initialize9,0
+
+test/text_test.rb,269
+  class ItemItem5,0
+    attr_accessor :name, :inner_textname6,0
+    attr_accessor :name, :inner_textname=6,0
+    attr_accessor :name, :inner_textinner_text6,0
+    attr_accessor :name, :inner_textinner_text=6,0
+    def initialize(_name,  _text)initialize7,0
+
+test/table_headers_test.rb,233
+  class ItemItem7,0
+    attr_accessor :name, :mailname8,0
+    attr_accessor :name, :mailname=8,0
+    attr_accessor :name, :mailmail8,0
+    attr_accessor :name, :mailmail=8,0
+    def initialize(_name,  _mail)initialize9,0
